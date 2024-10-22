@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 from dotenv import dotenv_values
 from datetime import datetime, timedelta, timezone, date
 import numpy as np
-from API_func import data_from_api
+from API_func import data_from_api_ele
 
 #create json data
 # Safely access the API key from environment variables
-env_vars = dotenv_values('strømpriser_api_key.env')
+env_vars = dotenv_values('.env')
 
 api_key = env_vars['MY_API_KEY']
 
@@ -21,7 +21,7 @@ date2 = date(2024, 8, 15)
 
 timespan = (date1, date2)
 
-data_from_api(timespan=timespan, region=1, api_key=api_key, datafile="strømpriser_data_MLPRegressor.json")
+data_from_api_ele(timespan=timespan, region=1, api_key=api_key, datafile="strømpriser_data_MLPRegressor.json")
 
 df = pd.read_json('strømpriser_data_MLPRegressor.json')
 

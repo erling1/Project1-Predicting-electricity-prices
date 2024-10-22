@@ -3,14 +3,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import date
 import numpy as np
-from creatingdataset import dataset
+from creatingdataset import dataset_ele_prices
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from statsmodels.tsa.arima.model import ARIMA
 from pmdarima import auto_arima
 import statsmodels.api as sm
 
-dataframe = dataset(startDate=date(2019,10,10),endDate=date(2013,10,10), filename="Strømpriser_for_ARIMA.json")
+dataframe = dataset_ele_prices(startDate=date(2019,10,10),endDate=date(2013,10,10), filename="Strømpriser_for_ARIMA.json")
 
 df = dataframe[['date','dailyPriceAverage']]
 
